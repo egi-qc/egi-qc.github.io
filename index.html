@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EGI Quality Criteria 6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <style>
+ul.sidebar-navbar {
+    width: 180px;
+}
+.affix {
+    top: 20px;
+}
+    </style>
+</head>
+
+
+
+<body data-spy="scroll" data-target=".sidebar-navbar">
+    <header class="jumbotron">
+    <div class="container">
+        <h1>EGI QC 6</h1>
+        <p class="lead"><p>This page describes the 6th release of the EGI Quality Criteria (QC), that is used for verification of software products. These QC drive the Software Verification in <a href="https://wiki.egi.eu/wiki/EGI_Software_Provisioning">EGI Software Provision</a> workflow.</p></p>
+    </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 sidebar-navbar">
+                    <ul class="nav nav-list sidebar-navbar" data-spy="affix" data-offset-top="300">
+                        
+                            <li><a href="#DOCUMENTATION">Documentation</a></li>
+                        
+                            <li><a href="#INSTALLATION">Installation</a></li>
+                        
+                            <li><a href="#SECURITY">Security</a></li>
+                        
+                            <li><a href="#INFO_MODEL">Information Model</a></li>
+                        
+                            <li><a href="#OPERATIONS">Operations</a></li>
+                        
+                            <li><a href="#SUPPORT">Support</a></li>
+                        
+                        <li class="divider"></li>
+                        
+                            <li><a href="#SPECIFIC">Specific QC</a></li>
+                        
+                    </ul>
+            </div><!--/.col-md-3-->
+            <div class="col-md-9">
+                
+                    <section id="DOCUMENTATION">
+                        <h2>Documentation</h2>
+                        
+                            <div class="criterion" id="QC6_DOC_1">
+    <h3>Release Notes</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_DOC_1</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Products must provide release notes with:</p>
+<ul>
+<li>new features</li>
+<li>bug fixes</li>
+<li>any backward incompatible changes</li>
+</ul></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier must assure that the document exists and contains the requested information.</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><p>Include a link to the document in the report.</p></dd>
+        
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_DOC_2">
+    <h3>User Documentation</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_DOC_2</code>
+        <dt>Critical</dt>
+        
+            <dd>True (for user-side services and tools)</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Products with client tools must provide documentation on its usage</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier must assure that the document exists. For any detected flaws in the document, open a ticket with the issue.</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><p>Include a link to the document in the report.</p></dd>
+        
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_DOC_3">
+    <h3>API Documentation</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_DOC_3</code>
+        <dt>Critical</dt>
+        
+            <dd>False</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>If the product provides a public API, it must be documented. The documentation should cover all the existing public functionality of the API. If the product implements a well-known or standard API (e.g. SRM), any missing functionality must be documented.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier must assure that the API is documented.</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><p>Include a link to the document in the report.</p></dd>
+        
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_DOC_4">
+    <h3>Administrator Documentation</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_DOC_4</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Products must provide an administrator guide describing installation, configuration
+and operation of the system. The document should contain the following information:</p>
+<ul>
+<li>description of services and daemons running</li>
+<li>init scripts and expected run levels</li>
+<li>configuration files</li>
+<li>list of log files</li>
+<li>open ports used by the product</li>
+<li>cron jobs used by the service</li>
+</ul></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier must assure that the document exists. For any detected flaws in the document, open a ticket with the issue.</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><p>Include a link to the document in the report.</p></dd>
+        
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_DOC_5">
+    <h3>Software License</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_DOC_5</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Products must have a compatible license for using them in the EGI Infrastructure.
+For Open Source products, compatible licenses are those accepted by the Open Source
+Initiative and categorized as <em>Popular and widely used or with strong communities</em>:</p>
+<ul>
+<li>Apache License, 2.0 (Apache-2.0)</li>
+<li>BSD 3-Clause "New" or "Revised" license (BSD-3-Clause)</li>
+<li>BSD 3-Clause "Simplified" or "FreeBSD" license (BSD-2-Clause)</li>
+<li>GNU General Public License (GPL)</li>
+<li>GNU Library or "Lesser" General Public License (LGPL)</li>
+<li>MIT license (MIT)</li>
+<li>Mozilla Public License 1.1 (MPL-1.1)</li>
+<li>Common Development and Distribution License (CDDL-1.0)</li>
+<li>Eclipse Public License (EPL-1.0)</li>
+</ul>
+<p>Other licenses accepted by the Open Source Initiative and listed as <em>Special
+Purpose</em> are compatible with the infrastructure (when applicable):</p>
+<ul>
+<li>Educational Community License</li>
+<li>IPA Font License (IPA)</li>
+<li>NASA Open Source Agreement 1.3 (NASA-1.3)</li>
+<li>Open Font License 1.1 (OFL-1.1)</li>
+</ul>
+<p>Any other license, and non Open Source products will be evaluated by the
+verification team in coordination with the Operations Community.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>License of the product must be one of the listed before.</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><p>Include the license type in the report.</p></dd>
+        
+        
+            <dt>See also</dt>
+            <dd><p><a href="http://www.opensource.org/licenses/category">Open Source Initiative Licenses by Category</a></p></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                    </section>              
+                
+                    <section id="INSTALLATION">
+                        <h2>Installation</h2>
+                        
+                            <div class="criterion" id="QC6_DIST_1">
+    <h3>Binary Distribution</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_DIST_1</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Products must be available in the native packaging format of the supported
+platform (RPM or DEB packages).</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Packages must install without issues in a machine configured without any
+external repositories (valid repositories are the standard OS repo, UMD
+repo and EPEL repo for RH based distros)</p>
+<p>Packages must follow the OS policies (name of packages, use of filesystem
+hierarchy, init scripts, ...). For any detected issue, open a ticket.</p>
+<p>Packages must be signed (or the repository where they are fetched from is
+signed for Debian-based distros)</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for products installing without any dependencies
+  problems and using valid signatures.</li>
+<li><span class="label label-warning">WARNING</span> for products that install correctly
+  but are not compliant with the distro guidelines (e.g. files in /opt)</li>
+<li><span class="label label-danger">FAIL</span> in any other case.</li>
+</ul>
+<p>yum/apt-get log can be included as appendix to the report.</p></dd>
+        
+        
+            <dt>See also</dt>
+            <dd><ul>
+<li>Verification reports from EMI release 1</li>
+<li><a href="https://rt.egi.eu/rt/Ticket/Display.html?id=1357">RT #1357</a></li>
+<li><a href="https://ggus.eu/ws/ticket_info.php?ticket=82417">GGUS #82417</a></li>
+</ul></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_UPGRADE_1">
+    <h3>Upgrade</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_UPGRADE_1</code>
+        <dt>Critical</dt>
+        
+            <dd>False</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Non-major updates should be installable in a machine configured with
+the previous version.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier should update a working product with the verified version. The
+update should not cause any problems. </p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-info">Not tested</span> if the installation was not an upgrade.</li>
+<li><span class="label label-success">OK</span> for products updated without issues. </li>
+<li><span class="label label-danger">FAIL</span> in any other case.</li>
+</ul>
+<p>yum/apt-get log can be included as appendix to the report.</p></dd>
+        
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                    </section>              
+                
+                    <section id="SECURITY">
+                        <h2>Security</h2>
+                        
+                            <div class="criterion" id="QC6_SEC_1">
+    <h3>X.509 Certificate support</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_SEC_1</code>
+        <dt>Critical</dt>
+        
+            <dd>True (for products requiring authentication)</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Primary authentication token within the infrastructure is the X.509 certificate and its proxy derivatives.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier must use X.509 certificates as authentication token. The appliance should also support proxy derivatives (e.g. VOMS proxies).</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for products able to use X.509 certificates as auth token.</li>
+<li><span class="label label-danger">FAIL</span> in any other case.</li>
+</ul></dd>
+        
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_SEC_2">
+    <h3>SHA-2 Certificates Support</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_SEC_2</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Certificates and proxies generatec with SHA-2 cryptographic hash funtions must be supported by the middleware</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verification must be performed with SHA-2 certificates for the service and for clients.</p></dd>
+        
+        
+            <dt>Testing</dt>
+            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_QC6_Testing">EGI QC wiki</a> for more information on SHA-2 certificates.</p></dd>
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for products able to use SHA-2 certificates.</li>
+<li><span class="label label-danger">FAIL</span> in any other case.</li>
+</ul></dd>
+        
+        
+            <dt>See also</dt>
+            <dd><p><a href="https://rt.egi.eu/rt/Ticket/Display.html?id=3078">RT #3078</a></p></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_SEC_3">
+    <h3>RFC Proxy support</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_SEC_3</code>
+        <dt>Critical</dt>
+        
+            <dd>False</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>All middelware using proxies must accept RFC proxies as credential tokens for authentication</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verification must be performed using a RFC proxy. Such proxy can be obtained with the <code>-rfc</code> option of <code>voms-proxy-init</code>.</p></dd>
+        
+        
+            <dt>Testing</dt>
+            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_QC6_Testing">EGI QC wiki</a> for more information on RFC proxies.</p></dd>
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for products able to use RFC proxies.</li>
+<li><span class="label label-warning">WARNING</span> in any other case.</li>
+</ul></dd>
+        
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_SEC_4">
+    <h3>ARGUS Integration</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_SEC_4</code>
+        <dt>Critical</dt>
+        
+            <dd>False</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>All services requiring authorization should be able to use an external ARGUS service that manages the authorization policies and provides mapping of accounts.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier configures an external ARGUS service for the product being verified. Test a banning policy and a allowed policy to the resource. Check that the policies are enforced.</p></dd>
+        
+        
+            <dt>Testing</dt>
+            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_QC6_Testing">EGI QC wiki</a> for using the ARGUS service of the verification testbed for this test.</p></dd>
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for products that apply correctly the banning 
+  and authorized policies of an external ARGUS service.</li>
+<li><span class="label label-warning">WARNING</span> for products not supporting ARGUS integration.</li>
+</ul></dd>
+        
+        
+            <dt>See also</dt>
+            <dd><p><a href="https://twiki.cern.ch/twiki/bin/view/EGEE/AuthorizationFramework">ARGUS Authorization Service</a></p></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_SEC_5">
+    <h3>World Writable Files</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_SEC_5</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>World-writable files and directories are dangerous since they allows anyone to modify them, several vulnerabilities in recent years have been due to world writable files and directories being present when they should not be. No product should include or create world writable files in order to prevent new vulnerabilities being introduced in the future.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier must assure that the product does not include or creates world-writable files or directories. If any world-writable files are required for the normal operation of the service, these should be documented by the Techonology Provider, a ticket reporting the files must be opened. Logs and config files must not be world-writable.</p></dd>
+        
+        
+            <dt>Testing</dt>
+            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_QC6_Testing">EGI QC wiki</a> for example test.</p></dd>
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for products without world-writabble files</li>
+<li><span class="label label-warning">WARNING</span> for products with world-writabble files required for operation and documented.</li>
+<li><span class="label label-danger">FAIL</span> for products with world-writtable files that are not documented.</li>
+</ul></dd>
+        
+        
+            <dt>See also</dt>
+            <dd><p>Proposed by the EGI SVG RAT to prevent new vulnerabilities in the future.</p></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC_SEC_6">
+    <h3>Passwords in world readable files</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC_SEC_6</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>If the product uses configuration files with any kind of passwords, those files must not be
+world readable.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier must check the default permission of configuration files that contain passwords. None of them must be readable.</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> if all files with passwords are not world readable.</li>
+<li><span class="label label-danger">FAIL</span> in any other case.</li>
+</ul></dd>
+        
+        
+            <dt>See also</dt>
+            <dd><p><a href="https://wiki.egi.eu/wiki/SVG:Advisory-SVG-2011-1414">SVG Advisory 1414</a></p></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                    </section>              
+                
+                    <section id="INFO_MODEL">
+                        <h2>Information Model</h2>
+                        
+                            <div class="criterion" id="QC6_INFO_1">
+    <h3>GlueSchema 1.3 Support</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_INFO_1</code>
+        <dt>Critical</dt>
+        
+            <dd>False</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Resource information exchanged in the EGI Infrastructure must conform to GlueSchema v1.3</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier must run glue validator to check GlueSchema 1.3 conformance.</p></dd>
+        
+        
+            <dt>Testing</dt>
+            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_QC6_Testing">EGI QC wiki</a> for information on running the validator and list of allowed issues.</p></dd>
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for glueschema compliant products. </li>
+<li><span class="label label-warning">WARNING</span> for products that fail for the 
+  allowed failures documented in the wiki.</li>
+<li><span class="label label-danger">FAIL</span> for any other case.</li>
+</ul></dd>
+        
+        
+            <dt>See also</dt>
+            <dd><ul>
+<li><a href="http://glueschema.forge.cnaf.infn.it/Spec/V13">GlueSchema Specification v1.3</a></li>
+<li><a href="https://tomtools.cern.ch/confluence/display/IS/GLUEValidator">Glue Validator</a></li>
+</ul></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_INFO_2">
+    <h3>GlueSchema 2.0 Support</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_INFO_2</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Resource information exchanged in the EGI Infrastructure must conform to GlueSchema v2.0</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier must run glue validator to check GlueSchema 2 conformance.</p></dd>
+        
+        
+            <dt>Testing</dt>
+            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_QC6_Testing">EGI QC wiki</a> for information on running the validator and list of allowed issues.</p></dd>
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for glueschema compliant products. </li>
+<li><span class="label label-warning">WARNING</span> for products that fail for the 
+  allowed failures documented in the wiki.</li>
+<li><span class="label label-danger">FAIL</span> for any other case.</li>
+</ul></dd>
+        
+        
+            <dt>See also</dt>
+            <dd><ul>
+<li><a href="http://glueschema.forge.cnaf.infn.it/Spec/V13">GlueSchema Specification v1.3</a></li>
+<li><a href="https://tomtools.cern.ch/confluence/display/IS/GLUEValidator">Glue Validator</a></li>
+</ul></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_INFO_3">
+    <h3>Middleware Version Information</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_INFO_3</code>
+        <dt>Critical</dt>
+        
+            <dd>False</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Resource information published by Information Discovery Appliances must include the middleware version of the middleware</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Verifier runs a query to check the middleware version.</p></dd>
+        
+        
+            <dt>Testing</dt>
+            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_QC6_Testing">EGI QC wiki</a> for information on example queries.</p></dd>
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for products that publish their version. </li>
+<li><span class="label label-warning">WARNING</span> otherwise.</li>
+</ul></dd>
+        
+        
+            <dt>See also</dt>
+            <dd><p><a href="https://rt.egi.eu/rt/Ticket/Display.html?id=1378">RT #1378</a></p></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_INFO_4">
+    <h3>Underlying system information</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_INFO_4</code>
+        <dt>Critical</dt>
+        
+            <dd>False</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Information about appliances managing computing or storage resources must reflect the actual values for resource usage.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Pass if information published by the appliance is updated regularly and reflects the actual values (i.e. are not set to static default values). The information updates should not compromise the availabilty of the service.</p></dd>
+        
+        
+            <dt>Testing</dt>
+            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_Quality_Criteria_Testing">EGI QC wiki</a></p></dd>
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for products that publish dynamic information
+  and that information reflects the actual resource information.</li>
+<li><span class="label label-warning">WARNING</span> otherwise.</li>
+</ul></dd>
+        
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                    </section>              
+                
+                    <section id="OPERATIONS">
+                        <h2>Operations</h2>
+                        
+                            <div class="criterion" id="QC6_MON_1">
+    <h3>Service Probes</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_MON_1</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>TP must provide a (or a set of) monitoring probe that tests that the service
+provides the expected functionality correctly that runs integrated in the
+monitoring infrastructure of EGI.</p>
+<p>The probe should only use the public interface of the service and the exact
+tests to perform for each service are determined by the operations community. The
+product should work with the existing probes for the service.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><ul>
+<li>A probe for the product integrated in the EGI monitoring tools must exist</li>
+<li>New versions of the product must work with existing probes for the service. If
+an update of the probe is required, it must follow the probe development policy.</li>
+</ul></dd>
+        
+        
+        
+        
+            <dt>See also</dt>
+            <dd><ul>
+<li><a href="https://tomtools.cern.ch/confluence/display/SAM/Probes">SAM Probes Documentation</a></li>
+<li><a href="https://wiki.egi.eu/wiki/SAM">SAM</a></li>
+</ul></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_ACC_1">
+    <h3>Accounting Records</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_ACC_1</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Job Execution Appliances must generate accounting records for the resource
+consumption of the users. The exact format of the accounting records is defined
+by the operations community.</p>
+<p>These records must be transmitted to the EGI central database periodically.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Pass if the accounting records are generated correctlyi and transmitted to
+the central EGI accouting database.</p></dd>
+        
+        
+        
+        
+            <dt>See also</dt>
+            <dd><ul>
+<li><a href="https://wiki.egi.eu/wiki/Accounting">EGI Accounting</a></li>
+<li><a href="https://wiki.egi.eu/wiki/APEL">APEL</a></li>
+</ul></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                    </section>              
+                
+                    <section id="SUPPORT">
+                        <h2>Support</h2>
+                        
+                            <div class="criterion" id="QC6_SUPPORT_1">
+    <h3>Bug Tracking System</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_SUPPORT_1</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Technology Providers must enrol in GGUS as 3rd level support for the products
+verified by the Quality Assurance team of EGI. Any further integration with
+TP-specific bug tracking software is entirely up to the Technology Provider.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Pass if Technology Provider enlisted as 3rd level support in GGUS.</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> for products with support in GGUS. </li>
+<li><span class="label label-danger">FAIL</span> for any other case.</li>
+</ul></dd>
+        
+        
+            <dt>See also</dt>
+            <dd><p><a href="http://ggus.eu">GGUS</a></p></dd>
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                    </section>              
+                
+                
+                    <section id="SPECIFIC">
+                        <h2>Specific QC</h2>
+                        
+                            <div class="criterion" id="QC6_FUNC_1">
+    <h3>Basic Funcionality Test</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_FUNC_1</code>
+        <dt>Critical</dt>
+        
+            <dd>True</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Verification must include basic functionality tests of the product that assures that
+it performs its intended functionality.
+These tests must focus on new features or fixed bugs of the release.
+Proposed tests for the each product are available at the EGI wiki.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Pass if the proposed tests pass on the product. If there are no tests available yet,
+pass if the basic functionality of the product is provided.</p></dd>
+        
+        
+            <dt>Testing</dt>
+            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_Quality_Criteria_Testing">EGI QC wiki</a> for test
+examples for each product.</p></dd>
+        
+        
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                    </section>              
+                
+            </div><!--/.col-md-9-->
+        </div><!--/.row-->
+    </div><!--/.container-->
+
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+</body> 
+
+
+
