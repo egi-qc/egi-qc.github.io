@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EGI Quality Criteria 6</title>
+    <title>EGI Quality Criteria 6 draft 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <style>
@@ -19,7 +19,7 @@ ul.sidebar-navbar {
 <body data-spy="scroll" data-target=".sidebar-navbar">
     <header class="jumbotron">
     <div class="container">
-        <h1>EGI QC 6</h1>
+        <h1>EGI QC 6 draft 1</h1>
         <p class="lead"><p>This page describes the 6th release of the EGI Quality Criteria (QC), that is used for verification of software products. These QC drive the Software Verification in <a href="https://wiki.egi.eu/wiki/EGI_Software_Provisioning">EGI Software Provision</a> workflow.</p></p>
     </div>
     </header>
@@ -39,11 +39,7 @@ ul.sidebar-navbar {
                         
                             <li><a href="#OPERATIONS">Operations</a></li>
                         
-                            <li><a href="#SUPPORT">Support</a></li>
-                        
                         <li class="divider"></li>
-                        
-                            <li><a href="#SPECIFIC">Specific QC</a></li>
                         
                     </ul>
             </div><!--/.col-md-3-->
@@ -274,40 +270,6 @@ signed for Debian-based distros)</p></dd>
 <li><a href="https://rt.egi.eu/rt/Ticket/Display.html?id=1357">RT #1357</a></li>
 <li><a href="https://ggus.eu/ws/ticket_info.php?ticket=82417">GGUS #82417</a></li>
 </ul></dd>
-        
-         
-    </dl>
-    <hr />
-</div>
-                        
-                            <div class="criterion" id="QC6_UPGRADE_1">
-    <h3>Upgrade</h3>
-    <dl class="dl-horizontal">
-        <dt>ID</dt><dd><code>QC6_UPGRADE_1</code>
-        <dt>Critical</dt>
-        
-            <dd>False</dd>
-        
-        
-            <dt>Description</dt>
-            <dd><p>Non-major updates should be installable in a machine configured with
-the previous version.</p></dd>
-        
-        
-            <dt>What to check</dt>
-            <dd><p>Verifier should update a working product with the verified version. The
-update should not cause any problems. </p></dd>
-        
-        
-        
-            <dt>What to report</dt>
-            <dd><ul>
-<li><span class="label label-info">Not tested</span> if the installation was not an upgrade.</li>
-<li><span class="label label-success">OK</span> for products updated without issues. </li>
-<li><span class="label label-danger">FAIL</span> in any other case.</li>
-</ul>
-<p>yum/apt-get log can be included as appendix to the report.</p></dd>
-        
         
          
     </dl>
@@ -763,83 +725,6 @@ the central EGI accouting database.</p></dd>
                         
                     </section>              
                 
-                    <section id="SUPPORT">
-                        <h2>Support</h2>
-                        
-                            <div class="criterion" id="QC6_SUPPORT_1">
-    <h3>Bug Tracking System</h3>
-    <dl class="dl-horizontal">
-        <dt>ID</dt><dd><code>QC6_SUPPORT_1</code>
-        <dt>Critical</dt>
-        
-            <dd>True</dd>
-        
-        
-            <dt>Description</dt>
-            <dd><p>Technology Providers must enrol in GGUS as 3rd level support for the products
-verified by the Quality Assurance team of EGI. Any further integration with
-TP-specific bug tracking software is entirely up to the Technology Provider.</p></dd>
-        
-        
-            <dt>What to check</dt>
-            <dd><p>Pass if Technology Provider enlisted as 3rd level support in GGUS.</p></dd>
-        
-        
-        
-            <dt>What to report</dt>
-            <dd><ul>
-<li><span class="label label-success">OK</span> for products with support in GGUS. </li>
-<li><span class="label label-danger">FAIL</span> for any other case.</li>
-</ul></dd>
-        
-        
-            <dt>See also</dt>
-            <dd><p><a href="http://ggus.eu">GGUS</a></p></dd>
-        
-         
-    </dl>
-    <hr />
-</div>
-                        
-                    </section>              
-                
-                
-                    <section id="SPECIFIC">
-                        <h2>Specific QC</h2>
-                        
-                            <div class="criterion" id="QC6_FUNC_1">
-    <h3>Basic Funcionality Test</h3>
-    <dl class="dl-horizontal">
-        <dt>ID</dt><dd><code>QC6_FUNC_1</code>
-        <dt>Critical</dt>
-        
-            <dd>True</dd>
-        
-        
-            <dt>Description</dt>
-            <dd><p>Verification must include basic functionality tests of the product that assures that
-it performs its intended functionality.
-These tests must focus on new features or fixed bugs of the release.
-Proposed tests for the each product are available at the EGI wiki.</p></dd>
-        
-        
-            <dt>What to check</dt>
-            <dd><p>Pass if the proposed tests pass on the product. If there are no tests available yet,
-pass if the basic functionality of the product is provided.</p></dd>
-        
-        
-            <dt>Testing</dt>
-            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_Quality_Criteria_Testing">EGI QC wiki</a> for test
-examples for each product.</p></dd>
-        
-        
-        
-         
-    </dl>
-    <hr />
-</div>
-                        
-                    </section>              
                 
             </div><!--/.col-md-9-->
         </div><!--/.row-->
