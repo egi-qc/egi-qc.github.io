@@ -649,40 +649,6 @@ world readable.</p></dd>
     <hr />
 </div>
                         
-                            <div class="criterion" id="QC6_INFO_4">
-    <h3>Underlying system information</h3>
-    <dl class="dl-horizontal">
-        <dt>ID</dt><dd><code>QC6_INFO_4</code>
-        <dt>Critical</dt>
-        
-            <dd>False</dd>
-        
-        
-            <dt>Description</dt>
-            <dd><p>Information about appliances managing computing or storage resources must reflect the actual values for resource usage.</p></dd>
-        
-        
-            <dt>What to check</dt>
-            <dd><p>Pass if information published by the appliance is updated regularly and reflects the actual values (i.e. are not set to static default values). The information updates should not compromise the availabilty of the service.</p></dd>
-        
-        
-            <dt>Testing</dt>
-            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_Quality_Criteria_Testing">EGI QC wiki</a></p></dd>
-        
-        
-            <dt>What to report</dt>
-            <dd><ul>
-<li><span class="label label-success">OK</span> for products that publish dynamic information
-  and that information reflects the actual resource information.</li>
-<li><span class="label label-warning">WARNING</span> otherwise.</li>
-</ul></dd>
-        
-        
-         
-    </dl>
-    <hr />
-</div>
-                        
                     </section>              
                 
                     <section id="OPERATIONS">
@@ -698,22 +664,34 @@ world readable.</p></dd>
         
         
             <dt>Description</dt>
-            <dd><p>TP must provide a (or a set of) monitoring probe that tests that the service
+            <dd><p>Services must be monitored by the monitoring infrastructure of EGI by using 
+the public inerface of the service. The exact tests to perform for each
+service are determined by the operations community. The product should work
+with the existing probes for the service.</p>
+<p>TP should provide a (or a set of) monitoring probe that tests that the service
 provides the expected functionality correctly that runs integrated in the
-monitoring infrastructure of EGI.</p>
-<p>The probe should only use the public interface of the service and the exact
-tests to perform for each service are determined by the operations community. The
-product should work with the existing probes for the service.</p></dd>
+monitoring infrastructure of EGI.</p></dd>
         
         
             <dt>What to check</dt>
+            <dd><p>If the product is already being tested in the verification testbed, check that the tests
+pass OK. If the tests do not pass clarify the source of the problem (if it's a limitation
+of the verification testbed, the criterion passes as WARNING).</p>
+<p>If it's not being tested, contact the verifiers mailing list to configure the Nagios machine.</p>
+<p>If there there are no tests for the product, do also contact the verifiers mailing list to
+decide on the result of the verification.</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
             <dd><ul>
-<li>A probe for the product integrated in the EGI monitoring tools must exist</li>
-<li>New versions of the product must work with existing probes for the service. If
-an update of the probe is required, it must follow the probe development policy.</li>
+<li><span class="label label-success">OK</span> product is checked in the testbed
+  Nagios and passes all tests.</li>
+<li><span class="label label-warning">WARNING</span> There are no tests for the 
+product, or some tests do not pass due to limitations of the verification testbed.</li>
+<li><span class="label label-danger">FAIL</span> product is checked in the testbed
+  and one or more Nagios tests fail due to changes in the product.</li>
 </ul></dd>
-        
-        
         
         
             <dt>See also</dt>
@@ -744,10 +722,18 @@ by the operations community.</p>
         
         
             <dt>What to check</dt>
-            <dd><p>Pass if the accounting records are generated correctlyi and transmitted to
-the central EGI accouting database.</p></dd>
+            <dd><p>Execute some jobs and force the generation and transmission of records. Check that 
+there are as many records as job sumitted and that the transmission was started.</p></dd>
         
         
+        
+            <dt>What to report</dt>
+            <dd><ul>
+<li><span class="label label-success">OK</span> Accounting records are created and sent to
+ the EGI central database.</li>
+<li><span class="label label-danger">FAIL</span> The accounting records are not created.</li>
+<li><span class="label label-info">NA</span> For products that do not execute jobs. </li>
+</ul></dd>
         
         
             <dt>See also</dt>
@@ -818,20 +804,67 @@ TP-specific bug tracking software is entirely up to the Technology Provider.</p>
         
             <dt>Description</dt>
             <dd><p>Verification must include basic functionality tests of the product that assures that
-it performs its intended functionality.
-These tests must focus on new features or fixed bugs of the release.
-Proposed tests for the each product are available at the EGI wiki.</p></dd>
+it performs its intended functionality.</p></dd>
         
         
             <dt>What to check</dt>
-            <dd><p>Pass if the proposed tests pass on the product. If there are no tests available yet,
-pass if the basic functionality of the product is provided.</p></dd>
+            <dd><p>Verifier must configure the product and start its services in the verification testbed. 
+If the verifier is not able to start the services, the TP should be contacted to clarify
+any issues, opening GGUS tickets if neccesary.</p>
+<p>Once the product is installed and running, the verifier should perform basic tests
+to assert that its basic functionality is met. The quantity and level of detail of the tests
+can be adjusted for each release (i.e. major releases should include more testing than minor
+or revision releases.</p></dd>
         
         
             <dt>Testing</dt>
-            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_Quality_Criteria_Testing">EGI QC wiki</a> for test
+            <dd><p>See <a href="https://wiki.egi.eu/wiki/EGI_QC6_Specific">EGI QC wiki</a> for test
 examples for each product.</p></dd>
         
+        
+            <dt>What to report</dt>
+            <dd><p>Include in the report:</p>
+<ul>
+<li>what functionality was tested.</li>
+<li>if the tests were succesful or not.</li>
+</ul>
+<p>If the product cannot be operated because of some missing functionality or major bugs,
+set the product as rejected.</p></dd>
+        
+        
+         
+    </dl>
+    <hr />
+</div>
+                        
+                            <div class="criterion" id="QC6_FUNC_2">
+    <h3>New features/bug fixes testing.</h3>
+    <dl class="dl-horizontal">
+        <dt>ID</dt><dd><code>QC6_FUNC_2</code>
+        <dt>Critical</dt>
+        
+            <dd>False</dd>
+        
+        
+            <dt>Description</dt>
+            <dd><p>Verification should check (whenever feasible) any new features and bug fixes included 
+in the release.</p></dd>
+        
+        
+            <dt>What to check</dt>
+            <dd><p>Check the release notes of the products and test the relevant features and bug fixes included
+in the release (if they are feasible to be tested within the verification testbed).
+Take into account that the product will be also tested in Staged Rollout, if there are
+changes that should be tested in a production environment notify state it clearly in the report.</p></dd>
+        
+        
+        
+            <dt>What to report</dt>
+            <dd><p>Include in the report:</p>
+<ul>
+<li>what functionality was tested.</li>
+<li>if the tests were succesful or not.</li>
+</ul></dd>
         
         
          
